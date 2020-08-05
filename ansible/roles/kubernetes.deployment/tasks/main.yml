@@ -1,0 +1,19 @@
+- name: Create helloworld deployment
+  become: false
+  command: kubectl apply -f /home/kube/kubernetes/helloworld/helloworld-deployment.yaml
+
+- name: Create helloworld service
+  become: false
+  command: kubectl apply -f /home/kube/kubernetes/helloworld/helloworld-service.yaml
+
+- name: Create jenkins rbac
+  become: false
+  command: kubectl apply -f /home/kube/kubernetes/jenkins/jenkins-rbac.yaml
+
+- name: Create jenkins deployment
+  become: false
+  command: kubectl apply -f /home/kube/kubernetes/jenkins/jenkins-deployment.yaml
+
+- name: Create jenkins service
+  become: false
+  command: kubectl apply -f /home/kube/kubernetes/jenkins/jenkins-service.yaml
